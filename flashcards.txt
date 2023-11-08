@@ -1,0 +1,2495 @@
+14.string methods.js--> 
+context -->
+address and replace aword in a string ,  does escape sequence charecters counts as a string ,
+show the exxample of property and method() ? 
+1.length
+2.slice
+3.split 
+4.indexOf
+5.lastindexof
+ 6. concat ()
+ 7.includes ()
+ 8. toUppercase ()
+ 9. toLowercase ()
+ 10.charat ()
+ 11. search()
+ 12.replace ()
+ 13.trim ()
+ 14.trimRight()
+ 15. startswith()
+ 16. endswith ()
+ 17.match()
+ matchAll()
+ 19.padstart()
+ 20.padend ()
+ 21.substring ()
+ 22.sup ()
+ 23.valueOf()
+ 24.small()
+ 25. link()
+ 26.fontsize()
+  27.fontcolor()
+  28.anchor()
+  29.ParseInt()
+
+
+what are escape sequence charecters in js ?and what are they ?does they counts when present? 
+//escape sequence charecters 
+// list of all escape sequence charecters in js
+
+// In JavaScript, the following escape sequences are commonly used:
+
+// \' - Single quote
+// \" - Double quote
+// \\ - Backslash
+// \n - Newline
+// \r - Carriage return
+// \t - Tab
+// \b - Backspace
+// \f - Form feed
+// \uXXXX - Unicode escape sequence (where XXXX represents a 4-digit hexadecimal code)
+// Here's an example of how these escape sequences can be used in JavaScript strings:
+
+
+var singleQuote = 'This is a single quote: \'';
+var doubleQuote = "This is a double quote: \"";
+var backslash = "This is a backslash: \\";
+var newline = "This\nis\na\nnewline";
+var tab = "This\tis\ta\ttab";
+var unicode = "\u03A9"; // Ω (Greek capital letter omega)
+// In the above example, we use escape sequences to include special characters within strings and control the formatting of the text.
+
+
+// does escape sequence charecters counts when present? 
+
+// In JavaScript, escape sequence characters are counted as a single character when they are present within a string literal. These escape sequences are used to represent special characters or control characters that may not be directly typable or may require special formatting.
+
+// For example, when you use \n to represent a newline character or \t to represent a tab character within a string, they are counted as a single character in terms of the string's length.
+
+// Here's an example to demonstrate this:
+
+
+var myString = "Hello\nWorld"; // "Hello" and "World" are on separate lines
+console.log(myString.length); // Output: 11
+// In the example above, the string myString contains 11 characters, including the newline character represented by the escape sequence \n. The newline character is counted as a single character, just like any other regular character in the string.
+
+// So, when determining the length of a string, escape sequence characters are counted as a single character within the string.
+
+
+// converting string to number using parseInt
+var integers='3445356'
+document.write(typeof integers)//string
+// shocasing the typeof 
+var integers=parseInt(integers)
+document.write(typeof integers)//number
+
+15.string method practice set .js--> 
+console.log(sentence.includes(word))
+
+use template literal to convey one msg.-console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`)
+
+let amount = Number.parseInt(str2.slice(15))
+console.log(typeof amount)
+friend[3] = "R"
+// friend is not changed, because string is immutable in javascript 
+
+is immutable means non-changable ?
+Yes, in programming, "immutable" typically means non-changeable or unmodifiable.
+
+if string is immutable in js then how and why the replace method works on string ?
+
+//prove that strings are immutable 
+let string1='fan'
+document.write (string1)
+string1.replace('f','m')// The replace() method in JavaScript does not modify the original string in-place; it returns a new string with the replacements applied. Therefore, in order to see the modified string, you need to assign the result of replace() to a variable or use it in some way.so remember that .The lines of code you provided are not technically wrong, but they have a small oversight.
+document.write (string1)
+let string2=string1.replace('f','m')
+document.write (string2)
+// fanfanman
+// so this proves that strings are immutable 
+
+bcz..The lines of code you provided are not technically wrong, but they have a small oversight. The replace() method in JavaScript does not modify the original string in place; it returns a new string with the replacements applied. Therefore, in order to see the modified string, you need to assign the result of replace() to a variable or use it in some way.
+so remember that .
+
+
+Although strings are considered immutable in JavaScript, the replace() method allows you to perform string replacement by creating a new string with the desired changes.
+console.log(sentence[3,4]);--> its wrong syntax ,only access one value in []
+
+
+16.array.js--> 
+context--> 
+make an array.
+// string methods are used to parsing and manipulating strings 
+// array methods are used to iterating and manipulating arrays 
+// what is the difference between iterating and parsing ? also demonstrate via code ?
+Iterating and parsing are two distinct concepts in programming, although they can sometimes be related depending on the context.
+
+Iterating refers to the process of sequentially accessing each element of a collection or data structure, typically using a loop or iterator. It involves traversing through the elements one by one, performing some operation or action on each element.
+
+Parsing, on the other hand, refers to the process of analyzing or extracting structured data from a given input, often in the form of a string or a complex data format such as JSON or XML. Parsing involves breaking down the input into its constituent parts, interpreting the data, and converting it into a suitable representation for further processing.
+
+Here's an example that demonstrates both iterating and parsing:
+// Iterating an array
+var numbers = [1, 2, 3, 4, 5];
+for (var i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+// Parsing a string to extract numbers
+var input = "10, 20, 30, 40, 50";
+var parsedNumbers = input.split(", ");
+for (var j = 0; j < parsedNumbers.length; j++) {
+  console.log(parseInt(parsedNumbers[j]));
+}
+
+In the above example, we have an array numbers that contains a list of numbers. We use a for loop to iterate over the array and log each number to the console.
+
+Next, we have a string input that represents a list of numbers separated by commas and spaces. We use the split() method to parse the string and create an array parsedNumbers containing the individual number values. We then use another for loop to iterate over parsedNumbers, convert each element from string to number using parseInt(), and log the parsed numbers to the console.
+
+In this example, we differentiate between iterating (looping over an array) and parsing (splitting and converting a string) to demonstrate the distinct concepts and how they can be applied in different scenarios.
+and use -->
+1.concat()
+// 2.copywithin 
+// 3.entries
+// 4.every 
+// 5.fill 
+// 6.filter 
+// 7.find 
+// 8.findindddex 
+// 9.flat 
+// 10.flatmap 
+// 11.from 
+// 12.includes 
+// 13.indesof 
+// 14.join 
+// 15.keys 
+// 16.indesof 
+// 17.map 
+// 18.pop 
+// 19.push 
+// 20.reduce 
+// 21.reduceright 
+// 22.reverse 
+// 23.shift 
+// 24.slicr 
+// 25.some 
+// 26.splice 
+// 27.telocalstring 
+// 28.tostring 
+// 29.unshift 
+// 30.values 
+// 31.flatmap 
+// 32.filter 
+// 33.find 
+// 34.findindex 
+// 35.foreach 
+// 36.includes 
+// 37.indexof 
+// 38.join 
+// 39.keys 
+// 40.lastindexof 
+// 41.map 
+// 42.pop 
+// 43.push 
+// 44.reduce 
+// 45.reduceend 
+// 46.shift  
+// 47.slice
+// 48.reduce + map 
+// 49.every + some 
+// 50.foreach + push 
+// 51. filter +reduce 
+// 53. some + indexof 
+// 54.slice + conact 
+// 55. find +map 
+// 56. every + filter 
+// 57. foreach + slice 
+// 58. indexof + splice 
+// findIndex() + splice()
+// filter() + map()
+// every() + some()
+// reduce() + map()
+// forEach() + push()
+// filter() + reduce()
+// some() + indexOf()
+// slice() + concat()
+// map() + join()
+// reduce() + filter()
+// find() + map()
+// every() + filter()
+// forEach() + slice()
+// reduceRight() + concat()
+// filter() + map() + reduce()
+// some() + map()
+// indexOf() + splice()
+.......on it.
+
+
+
+
+//concat()
+//
+var Arr1=[1,2,3,4,5]
+var Arr2=[1,3]
+var Arr3=Arr1+Arr2 
+// how to-use in a professional manner and  practical use-case 
+
+// + primilarly used to concat strings and it's not usually good to add  arrays 
+console.log(Arr3)
+// .concat returns an object , its ok to using this 
+var Arr4=Arr1.concat(Arr2)
+console.log(Arr4)
+
+var array1 = [1, 2, 3];
+var array2 = [4, 5, 6];
+array1 = array1.concat(array2);
+console.log(array1);
+
+// 2.copywithin 
+// professional manner
+ //One practical real case where the copyWithin() function in JavaScript is commonly used is for efficiently copying and rearranging elements within an array.
+    // Consider a scenario where you have an array representing a sequence of numbers, and you want to rearrange some elements within the array without creating a new array or using multiple temporary variables.
+    // In this case, the copyWithin() function is called on the numbers array. The first argument, 2, specifies the index where the copied elements will be placed. The second argument, 5, represents the starting index of the elements to be copied. The third argument, 8, indicates the ending index (exclusive) of the elements to be copied.
+    // After executing the copyWithin() function, the array will be modified as follows:
+    // The copyWithin() function is particularly useful when you need to efficiently manipulate arrays by copying elements within the same array structure. It allows you to avoid creating a new array and efficiently update the existing array's elements.
+    // Some practical applications of copyWithin() include rearranging and shuffling elements within a deck of cards, reordering items in a list, or implementing algorithms that require in-place modifications to array elements.
+
+    // practical use-case 
+    // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // numbers.copyWithin(2, 5, 8);
+    // Outut:  [1, 2, 6, 7, 8, 6, 7, 8, 9]
+
+// 3.entries
+//state the use of it in a practical manner 
+// string methods are used to parsing and manipulating strings 
+// array methods are used to iterating and manipulating arrays 
+// what is the difference between iterating and parsing ? also demonstrate via code .
+
+// Iterating refers to the process of sequentially accessing each element of a collection or data structure, typically using a loop or iterator. It involves traversing through the elements one by one, performing some operation or action on each element.
+
+// Parsing, on the other hand, refers to the process of analyzing or extracting structured data from a given input, often in the form of a string or a complex data format such as JSON or XML. Parsing involves breaking down the input into its constituent parts, interpreting the data, and converting it into a suitable representation for further processing.
+
+// Here's an example that demonstrates both iterating and parsing:
+// Iterating an array
+var numbers = [1, 2, 3, 4, 5];
+for (var i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+// Parsing a string to extract numbers
+var input = "10, 20, 30, 40, 50";
+var parsedNumbers = input.split(", ");
+for (var j = 0; j < parsedNumbers.length; j++) {
+  console.log(parseInt(parsedNumbers[j]));
+}
+
+// In the above example, we have an array numbers that contains a list of numbers. We use a for loop to iterate over the array and log each number to the console.
+
+// Next, we have a string input that represents a list of numbers separated by commas and spaces. We use the split() method to parse the string and create an array parsedNumbers containing the individual number values. We then use another for loop to iterate over parsedNumbers, convert each element from string to number using parseInt(), and log the parsed numbers to the console.
+
+// In this example, we differentiate between iterating (looping over an array) and parsing (splitting and converting a string) to demonstrate the distinct concepts and how they can be applied in different scenarios.
+// practical use-case 
+var array=[1,2,3,4,5,6]
+console.log(array);
+array.copyWithin(0,1,3)
+console.log(array);
+// 4.entries 
+// state the use of it in a professional manner 
+ // Let's say you have an object representing a student record with properties like name, age, and grade, and you want to iterate over the key-value pairs of the object to perform some calculations or generate a report.
+    
+    // In this case, the entries() function is used to obtain an array of key-value pairs from the student object. The Object.entries() function converts the object into an array of arrays, where each inner array contains the key-value pair.
+    // By iterating over the studentEntries array using destructuring assignment, we can access each key-value pair. In the example, we simply log the key and value to the console.
+
+    // The entries() function is commonly used in scenarios where you need to process or analyze the properties and values of an object or entries of a Map. It allows you to dynamically iterate over the key-value pairs, perform calculations or transformations, generate reports, or implement algorithms based on the data contained in the entries.
+    // Using entries(), you can work with the structured data in a more flexible and dynamic manner, making it useful in a wide range of applications, including data processing, form submissions, configuration settings, and more.
+
+
+// practical use-case  
+// var student = {
+//       name: "John Doe",
+//       age: 18,
+//       grade: "A"
+//     };
+//     var studentEntries = Object.entries(student);
+//     for (var [key, value] of studentEntries) {
+//       console.log(key + ": " + value);
+//     }
+// The output will be:
+    // name: John Doe
+    // age: 18
+    // grade: A
+// 4.every()
+// state the use of it in a professional manner 
+    // One practical real case where the every() function in JavaScript is commonly used is for validating whether all elements in an array satisfy a specific condition or criteria.
+    // For example, let's consider a scenario where you have an array of numbers representing students' exam scores, and you want to check if all the students passed the exam by ensuring that their scores are above a certain threshold.
+        // In this case, the every() function is called on the scores array. The provided callback function checks if each score is greater than or equal to 70, which is the passing threshold.
+    // The every() function iterates through each element of the array and returns true if all elements satisfy the condition specified by the callback function. Otherwise, it returns false.
+    // In the example, the allPassed variable will be true since all scores are above 70.
+    // The every() function is commonly used for validation purposes, such as checking if all elements in an array meet certain criteria, constraints, or conditions. It is helpful in scenarios where you need to ensure that a specific condition is satisfied by every element before proceeding with further operations or decisions.
+    // Other practical applications of every() include checking if all checkboxes in a form are selected, validating input data, or performing quality checks on datasets.
+// practical use-case
+    // var scores = [85, 90, 78, 92, 88];
+    // var allPassed = scores.every(function(score) {
+    //   return score >= 70;
+    // });
+    // returns true when all elements are satisfying the conitionn  or it returns false . 
+// 5.fill 
+// 6.filter 
+// 7.find 
+// 8.findindddex 
+// 9.flat 
+// 10.flatmap 
+// 11.from 
+// 12.includes 
+// 13.indesof 
+// 14.join 
+// 15.keys 
+// 16.indesof 
+// 17.map 
+// 18.pop 
+// 19.push 
+// 20.reduce 
+// 21.reduceright 
+// 22.reverse 
+// 23.shift 
+// 24.slicr 
+// 25.some 
+// 26.splice 
+// 27.telocalstring 
+// 28.tostring 
+// 29.unshift 
+// 30.values 
+// 31.flatmap 
+// 32.filter 
+// 33.find 
+// 34.findindex 
+// 35.foreach 
+// 36.includes 
+// 37.indexof 
+// 38.join 
+// 39.keys 
+// 40.lastindexof 
+// 41.map 
+// 42.pop 
+// 43.push 
+// 44.reduce 
+// 45.reduceend 
+// 46.shift  
+// 47.slice
+// 48.reduce + map 
+// 49.every + some 
+// 50.foreach + push 
+// 51. filter +reduce 
+// 53. some + indexof 
+// 54.slice + conact 
+// 55. find +map 
+// 56. every + filter 
+// 57. foreach + slice 
+// 58. indexof + splice 
+// findIndex() + splice()
+// filter() + map()
+// every() + some()
+// reduce() + map()
+// forEach() + push()
+// filter() + reduce()
+// some() + indexOf()
+// slice() + concat()
+// map() + join()
+// reduce() + filter()
+// find() + map()
+// every() + filter()
+// forEach() + slice()
+// reduceRight() + concat()
+// filter() + map() + reduce()
+// some() + map()
+// indexOf() + splice()
+.......on it.
+
+
+
+let marks_class_12 = [91, 82, 63, 84, false, "Not Present"]
+
+17.js--> 
+context--> 
+create a array named num.
+use to toString ,typeof,join,unshift method on it . 
+
+let num=[1,2,3,4,5]
+console.log(num.toString())// converts array to string 
+console.log(num.toString())// converts string to number 
+console.log(num.unshift('434'))// adds element at the start of an array
+num.shift('434')//appends(adds an something to the end) an  element 
+console.log(num.join(" and "))// joins elements with and as a delimiter 
+console.log(num)// represents as a javascript object 
+console.log(typeof num)// object 
+console.log(num)// represents as a javascript object 
+let popedElement=num.pop("5")// displys poped element 
+console.log(popedElement)// displys/returns poped element 
+
+
+Imp note-->for parse and toString method . see there is 4 methods that i can think of ,
+they are parseInt, parseStr ,toString, toInt .
+now out of the 4 only 2 really exists thay are ..
+for integer iys parseInt and for String its tostring .
+
+parseInt,tostring(boss).
+
+18.js-->
+context--> 
+make an array named num then 
+use num[0],delete num[0],num.length,num.concat(num_more, num_even_more),reverse,sort,splice.
+
+
+
+//  what is an arrow function ? what is its syntax ? why it is convenient to use/what makes it convenient to use ?   
+// An arrow function is a concise syntax for writing JavaScript functions introduced in ECMAScript 6 (ES6). It provides a shorter and more readable way to define functions compared to the traditional function declaration syntax.
+The syntax for an arrow function is as follows:
+const functionName = (parameters) => {
+  // function body
+  return value;
+};
+what makes arrow function  convenient to use  in js ?
+ChatGPT
+Arrow functions in JavaScript provide several conveniences that make them popular and convenient to use:
+
+Concise syntax: Arrow functions have a shorter and more concise syntax compared to traditional function expressions. They allow you to write functions with fewer lines of code, making your code more readable and reducing visual clutter.
+
+Lexical this binding: Arrow functions do not have their own this context. Instead, they inherit the this value from the enclosing scope. This behavior eliminates the need for using .bind(), .call(), or .apply() to maintain the correct this context, especially in callback functions. It simplifies code and avoids confusion related to the value of this.
+
+Implicit return: If an arrow function has a single expression, you can omit the function body braces {} and the return keyword. The result of the expression is implicitly returned. This feature is especially useful for short and concise functions.
+
+No binding of arguments: Arrow functions do not have their own arguments object. Instead, they inherit the arguments object from the surrounding scope. This behavior can help avoid potential issues with arguments shadowing or confusion caused by arguments being affected by functions like .bind().
+
+Here's an example to illustrate the convenience of arrow functions:
+
+// Traditional function expression
+function multiply(a, b) {
+  return a * b;
+}
+
+// Arrow function
+const multiply = (a, b) => a * b;
+In this example, the arrow function multiply achieves the same functionality as the traditional function expression but with a more concise syntax.
+
+Overall, arrow functions offer a more streamlined and expressive way to write functions in JavaScript, with improved handling of this and shorter syntax, enhancing code readability and reducing potential pitfalls.
+
+
+// is function is a keyword in js ? show at least two perferct use of it ? 
+Yes, "function" is a keyword in JavaScript used to define functions. Here are two examples of perfect use cases for functions in JavaScript:
+
+Modular Code Organization:
+Functions are excellent for organizing code into reusable and modular components. By encapsulating a block of code within a function, you can easily reuse it throughout your program without duplicating code. This promotes code reusability, improves maintainability, and enhances the overall structure of your codebase.
+
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+greet("Alice"); // Output: Hello, Alice!
+greet("Bob"); // Output: Hello, Bob!
+
+In this example, the greet function takes a name parameter and logs a greeting message to the console. By defining this function, we can reuse it multiple times with different names, promoting code reusability and readability.
+
+Callback Functions:
+JavaScript heavily relies on callback functions, which are functions passed as arguments to other functions and executed at a later time or in response to an event. Callback functions enable asynchronous operations, event handling, and functional programming patterns.
+
+function fetchData(url, callback) {
+  // Simulating asynchronous data fetching
+  setTimeout(function () {
+    const data = "Some data from " + url;
+    callback(data);
+  }, 2000);
+}
+
+function handleData(data) {
+  console.log("Received data:", data);
+}
+
+fetchData("https://example.com/api", handleData);
+
+
+In this example, the fetchData function simulates an asynchronous data-fetching operation. It takes a URL and a callback function as arguments. After a delay of 2 seconds (simulated with setTimeout), it invokes the callback function with the fetched data. The handleData function serves as the callback, receiving and processing the data when it becomes available.
+
+Callback functions are widely used in JavaScript for handling asynchronous operations, event listeners, and functional programming patterns like map, filter, and reduce.
+
+These are just two examples of the many use cases for functions in JavaScript. Functions provide a powerful mechanism for code organization, reusability, and flexibility in JavaScript how to delete an array element in js 
+ChatGPT
+
+2 / 2
+
+In JavaScript, you can delete an array element using the delete keyword or by setting the value of the element to undefined. However, both methods have different effects.
+
+Using the delete keyword:
+
+javascript
+Copy code
+var array = [1, 2, 3, 4, 5];
+delete array[2];
+
+console.log(array); // Output: [1, 2, <empty>, 4, 5]
+In this example, the delete keyword is used to remove the element at index 2 from the array. However, it leaves behind an "empty" slot in the array, indicated by <empty>. The array length remains the same, and accessing array[2] will return undefined.
+
+Setting the element value to undefined:
+
+javascript
+Copy code
+var array = [1, 2, 3, 4, 5];
+array[2] = undefined;
+
+console.log(array); // Output: [1, 2, undefined, 4, 5]
+In this example, the element at index 2 is set to undefined, effectively removing the original value. However, unlike delete, the array slot is not considered "empty," and the array length remains unchanged.
+
+If you want to remove an array element and adjust the array length accordingly, you can use array methods like splice() or create a new array with the element removed. Here's an example using splice():
+
+
+var array = [1, 2, 3, 4, 5];
+array.splice(2, 1);
+
+console.log(array); // Output: [1, 2, 4, 5]
+In this example, splice() is used to remove one element starting from index 2. The resulting array has the element removed, and the array length is adjusted accordingly.
+
+
+is function a keyword and give at least two perfect example of it 
+
+Yes, function is a keyword in JavaScript used for defining functions. Here are two examples of how the function keyword is used:
+
+Function Declaration:
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet('John'); // Output: Hello, John!
+
+how splice method works ?
+
+The splice() method in JavaScript is used to modify an array by adding, removing, or replacing elements at a specific index. It allows you to make changes to an array in place, meaning it directly modifies the original array.
+
+The syntax of the splice() method is as follows:
+
+
+Copy code
+array.splice(startIndex, deleteCount, item1, item2, ...)
+startIndex: The index at which the modification should begin.
+deleteCount: The number of elements to remove starting from the startIndex. If set to 0, no elements are removed.
+item1, item2, ...: Optional. Elements to be inserted at the startIndex.
+Here are a few examples to illustrate how the splice() method works:
+
+Removing elements from an array:
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.splice(2, 2); // Removes 3 and 4 from the array
+console.log(numbers); // Output: [1, 2, 5]
+Adding elements to an array:
+
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.splice(2, 0, 'orange', 'grape'); // Inserts 'orange' and 'grape' at index 2
+console.log(fruits); // Output: ['apple', 'banana', 'orange', 'grape', 'cherry']
+Replacing elements in an array:
+
+const colors = ['red', 'green', 'blue'];
+colors.splice(1, 1, 'yellow'); // Replaces 'green' with 'yellow' at index 1
+console.log(colors); // Output: ['red', 'yellow', 'blue']
+In each example, the splice() method modifies the original array based on the specified startIndex, deleteCount, and optional items to be inserted.
+
+
+19.js--> 
+context-->
+array methods --> 
+foreach 
+array.from // used to create an array from an iterable object 
+for.. of 
+for .. in 
+
+how to use foreach to make a  function which multiplies elements by  2.?
+Ans -->
+function multiplyByTwo(array) {
+  array.forEach(function(element, index, arr) {
+    arr[index] = element * 2;
+  });
+}
+
+give one good exmaple with code  for-of of js 
+// add all the numbers of the an array using for loop in js .
+// 1.
+let num = [1, 2, 3, 4, 5];
+let total = 0;
+for (element in num) {
+  total = total + element; // how naive i can be sometimes.. here + would mean place element like one at the end of the previous one
+}
+console.log(total);
+console.log(typeof total);// string 
+// output:001234
+//2. for expected results using i . 
+let num1 = [1, 2, 3, 4, 5];
+let total1 = 0;
+
+for (let i = 0; i < num1.length; i++) {
+  total1 = total1 + num1[i];
+}
+
+console.log(total1);
+
+// output:15
+
+// 3.using for-of loop . 
+let num2 = [1, 2, 3, 4, 5];
+let total2 = 0;
+
+for (let element of num2) {
+  total2 = total2 + element;
+}
+
+console.log(total2);
+console.log(typeof total2);// number  
+
+// what is the difference between 1st approcah and third approcah?
+// its the let its all to make the difference in the first example as 
+// you didn't wrote let , elements became strnig additond is like concatanation for strings .
+
+// 3.using for-in loop . 
+let num3 = [1, 2, 3, 4, 5];
+let total3 = 0;
+
+for (let index in num3) {
+  total3 = total3 + num[index];
+}
+console.log(total3);
+console.log(typeof total3);//number 
+////////////////////////////////////////////
+try and solve the code below.
+const Numbers=[1,2,3,4,5]
+let Numbers2=for (Element of Numbers){
+    Element=Element*2
+}
+console.log(Numbers2)
+the solution is below 
+//make a function that multiply all the array elements bt two 
+
+function multiplyByTwo(array) {
+  array.forEach((element, index) => {
+    array[index] = element * 2;
+  });
+}
+
+let arr = [1, 2, 3, 4, 5];
+multiplyByTwo(arr);
+
+console.log(arr);
+//output
+// (5) [2, 4, 6, 8, 10]--> represents as js object in console 
+// here 5 is the number of elements in this array
+
+make an array from your name ?
+let Name='aloke'
+console.log( Array.from(Name))
+
+
+
+20.js -->
+context-->
+create an array named arr.
+then use map with an arrow function ,filter , reduce methods on it . 
+(OPEN AND TAKE LOOK AT THE CODE FOR SOLUTION)
+
+
+map, filter , reduce .
+let a = arr.map((value, index, array) => {
+let a2 = arr2.filter((a) => {
+const reduce_func = (h1, h2) => {
+let newarr3 = arr3.reduce(reduce_func)
+
+
+21.js-->
+context-->
+
+//Practice Problem 2
+//question-keep adding  numbers to the array in 1 untill 0 is added to the array.
+// Practice Problem 3
+// filter for numbers divisible by 10 from a given array.
+// Practice Problem 4
+//Create an array of squuare of given numbers . 
+// Practice Problem 5
+// Use reduce to calculate factorial of a given number from an array of first n natural numbers (n being the number whise factorial whose factorial needs to be calculated)
+
+
+
+
+
+// let n = arr.filter((x)=>{
+// let n = arr.map((x)=>{
+let n = arr.reduce((x1, x2) => {
+
+22.js-->
+context-->
+// Exercise 1: Guess the number using javascript 
+// Generate random number here
+// Keep asking for the number until the correct number is guessed
+// Increment the chances variable
+// Eventually after the game is over, display the (100 - Number of chances) and the actual number .
+
+
+
+
+23.js-->
+context-->
+display "HI Aloke" in console.
+
+
+
+
+
+24.js-->
+context-->
+display "Hello" in console. then  make two variables then make addition and display on the console.
+
+
+
+
+25.js-->
+context-->
+write js on the console ?
+display all the console ethods on the object , 
+how you will see an object in a tabular format .show warning in the console , show info in the console , show error in the console ,
+i dont understand console.time  function . teach me how its work and how to use it 
+i dont understand console.timeEnd  function . teach me how its work and how to use it 
+when we should use return statement/what scenarios are suitable for using return statement in function in js ?
+
+
+
+and remember you can show them like this so specifically you can write it in js code to make yourself more productive and coding more interactive .
+like, dont do this or dont do this like that . also you can use the sidebar to make that more accessible.
+
+use mdn reference to see the more . 
+use label with console.time to see what time a process took.
+make a loop and use the above method to see what time does it taken. like i can compare forloop and whileloop. 
+use assert to ssert a statement . 
+use console.log,info,warn,error,assert,time ,timeEnd.
+print/display 1 to 200 in the console using for loop in js. 
+try this 15 console methods with their practical use-cases. 
+1.console.log 
+2.console.error 
+3. warn
+4. info
+5.clear
+6.assert
+7.dir
+8.group
+9.groupEnd
+10.table
+11.count
+12.time
+13.timeEnd
+14.trace
+
+
+
+if uou want to see all the methods of console 
+write console.log(console),console.log(object)-
+this makes big objects easy to read 
+this will show console object and methods as a list  .
+
+
+
+//printing 1 to 10 using for loop
+for(let i=0;i<=10;i++){
+   console.log(i);
+}
+//
+while(let w=0;w<=10;w<20){
+   console.log(w);
+}
+// what was wrong in  above code 
+// Let's take a closer look at the code you provided:
+
+while (let w = 0; w <= 10; w < 20) {
+   console.log(w);
+ }
+
+//  The issue in the code is the usage of the let keyword within the while statement. In JavaScript, the let keyword is used for variable declaration and cannot be used directly in the while condition.
+//  To correct the code, you should move the variable declaration outside the while loop. Here's the corrected code: 
+let w = 0;
+while (w <= 10) {
+  console.log(w);
+  w++; // Increment 'w' to ensure the loop progresses
+}
+
+// In the corrected code, the variable w is declared before the while loop, and then the loop condition checks if w is less than or equal to 10. The loop will continue executing as long as the condition is true. Additionally, w is incremented at the end of each iteration using w++ to ensure the loop progresses and doesn't result in an infinite loop.
+// Here's the corrected code:
+
+let w = 0;
+while (w <= 10) {
+  console.log(w);
+  w++; // Increment the value of 'w' to avoid an infinite loop
+}
+
+// Here's an explanation of the corrections made:
+// In the original code, the while statement has a syntax error. The initialization part should not contain the condition w < 20. Instead, the initialization of the variable w should be done outside the while loop.
+// The condition w < 20 is unnecessary because the desired range is from 0 to 10. Including this condition would cause the loop to run indefinitely.
+// To ensure that the loop progresses and eventually terminates, we need to increment the value of w within the loop body. Adding w++ after console.log(w) ensures that w is incremented by 1 in each iteration.
+
+
+// now use console.time and console.timeEnd  method to measure the time  of execution
+// Certainly! Here's an updated version of the code that uses console.time and console.timeEnd to measure the execution time:
+console.time('Execution Time');
+
+let w = 0;
+while (w <= 10) {
+  console.log(w);
+  w++; // Increment 'w' to ensure the loop progresses
+}
+
+console.timeEnd('Execution Time');
+
+
+
+
+26.js-->
+context-->
+solve the exercise 1 which is write a js progam where you can compare that if a given numer is smaller tham a number or not .
+function compareNumbers(givenNumber, referenceNumber) {
+  if (givenNumber < referenceNumber) {
+    return `${givenNumber} is smaller than ${referenceNumber}.`;
+  } else if (givenNumber > referenceNumber) {
+    return `${givenNumber} is greater than ${referenceNumber}.`;
+  } else {
+    return `${givenNumber} is equal to ${referenceNumber}.`;
+  }
+}
+
+// Example usage
+const givenNumber = 10;
+const referenceNumber = 20;
+
+const result = compareNumbers(givenNumber, referenceNumber);
+console.log(result);
+
+
+let number = Math.floor((Math.random() * 100) + 1); // Generates a random number b/w 1 and 100
+++chances; // To increment the number of chances taken
+do {}
+    continue;
+console.log("\nCongratulations🥳🥳\nThe number generated was", number + " and you guessed it right😁\nYour final score is", score);
+
+
+27.js-->
+context--> 
+use a prompt to take input from  the user and display the input  at the window . 
+
+let userInput = prompt("Please enter your input:");
+
+if (userInput !== null) {
+  alert("You entered: " + userInput);
+}
+use a prompt to take input and use that alert to show the type of given input to the user .
+
+let userInput = prompt("Please enter your input:");
+
+if (userInput !== null) {
+  let inputType = typeof userInput;
+  alert("The type of the input is: " + inputType);
+}
+then also use the parseInt to change the typr of input too .
+let userInput = prompt("Please enter your input:");
+
+if (userInput !== null) {
+  let inputType = typeof userInput;
+  let parsedInput = parseInt(userInput);
+  let parsedInputType = typeof parsedInput;
+
+  alert("Original input: " + userInput + "\nOriginal input type: " + inputType + "\nParsed input: " + parsedInput + "\nParsed input type: " + parsedInputType);
+}
+
+set a default argument to a prompt .
+
+let userInput = prompt("Please enter your input:");
+
+if (userInput === null || userInput === "") {
+  userInput = "Default value";
+}
+
+alert("You entered: " + userInput);
+
+use confirm to ask somthing to the user . 
+
+let userConfirmation = confirm("Do you want to proceed?");
+
+if (userConfirmation) {
+  alert("You clicked OK!");
+} else {
+  alert("You clicked Cancel!");
+}
+
+why you should not use default prompts on your websites?
+use alert, prompt , confirm , if..else  on a single block if js code ?
+
+let name = prompt("Please enter your name:");
+
+if (name !== null && name !== "") {
+  alert("Welcome, " + name + "!");
+
+  let age = prompt("How old are you?");
+  
+  if (age !== null && age !== "") {
+    let confirmation = confirm("Are you sure you want to proceed?");
+    
+    if (confirmation) {
+      alert("Great! Let's continue.");
+    } else {
+      alert("Okay, maybe next time.");
+    }
+  } else {
+    alert("Age not provided. Exiting...");
+  }
+} else {
+  alert("No name provided. Exiting...");
+}
+
+
+
+i dont personally use prompt and confirm on a website and the reason is / bcz the first reason is that they have some limitation 
+like exact location and exact looks on the browser depends on the browser . so if the user is using any other browser then thebox will apper 
+on different location which you dont want to happen . and also as you can see this looks more classic than modern which makes your website look old .
+so use modals instead in which with help of javascript you can display html, so mostly i use that  one more thing which i dont like is 
+they block  the main execution thread of javascript which is not a good thing like when i reload this page the prompt will be visible  untill you write somthing in the prompt .
+and then it will execute/show the rest of the code . so this is not good at all . 
+these are like limitations . 
+so you can use modals but where i use that also iwill tell you so  when i build panels 
+at that time i use this . i dont want to beautify the admin panels or bring additional code for them . 
+or so any hard work . i will work hard on the user facing app like what does user see .
+but still again if i want to pull something quickly and the user not going to see it then i use confirm . i also use alert and prompt too.
+but you dont wanna use them on the frontend apps because it give an old look to your front end apps , but you should know they exist and how to use it .
+the major disadvantage of using prompt and confirm  is it pauses the execution of the script for the user to interact , the js is paused untill the  
+window is dismisssed and another thing is you cannot modify/customize  this. 
+
+28.js--> 
+context-->
+what is bom and dom ? explain in detail ?
+core features of browser javascript /javascript engine/javascript in browser ? 
+show/display  all the window methods in the console . 
+is window object and document object  a global object ? also prove it .
+
+Yes, the window object and the document object are global objects in a web browser environment. Here's how you can verify it:
+
+Open a web browser.
+Open the browser's developer console. You can typically do this by right-clicking on the web page and selecting "Inspect" or "Inspect Element," then navigating to the "Console" tab.
+In the console, type window and press Enter. This will display the window object, which represents the browser window and provides access to various properties and methods.
+Similarly, type document and press Enter. This will display the document object, which represents the current web page and provides access to the HTML document's structure and content.
+By examining the output in the console, you will see that both window and document are available as global objects. They contain various properties and methods that can be accessed and manipulated within the web browser environment.
+
+Additionally, you can test their global accessibility by running code snippets that access the window and document objects from different parts of your JavaScript code:
+
+// Accessing the window object
+console.log(window.innerWidth); // Output: current window's inner width
+
+// Accessing the document object
+console.log(document.title); // Output: title of the current HTML document
+
+In the above code, the window object is accessed to retrieve the current window's inner width, and the document object is accessed to retrieve the title of the HTML document. These properties are accessible globally because window and document are global objects in a browser environment.
+
+why you want to change something using js when you can change that using css?
+why we call js the brain of the webpage ?
+
+JavaScript is often referred to as the "brain" of a webpage because it provides the interactivity and dynamic behavior to the static HTML and CSS structure. It allows web developers to add logic, handle events, manipulate the DOM (Document Object Model), make API requests, and create complex functionality that makes the webpage come alive.
+Here's a simple code example to demonstrate how JavaScript can act as the brain of a webpage by manipulating the DOM:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Brain Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script>
+    // JavaScript code to manipulate the DOM
+    let box = document.querySelector('.box');
+    box.addEventListener('click', function() {
+      box.style.backgroundColor = 'blue';
+    });
+  </script>
+</body>
+</html>
+
+
+In this example, we have an HTML structure with a single div element having the class box. Initially, the box has a red background color defined in the CSS.
+The JavaScript code within the <script> tags selects the box element using document.querySelector('.box'). It then adds an event listener to the box element for the 'click' event. When the box is clicked, the event handler function changes the background color of the box to blue using box.style.backgroundColor = 'blue'.
+With this code, JavaScript acts as the brain of the webpage. It listens for the click event on the box element and dynamically changes its appearance by modifying the CSS style property. This interactivity and behavior are what give life to the static HTML structure, making JavaScript the brain that controls the behavior and responsiveness of the webpage.
+
+window.console.log(window)
+The code window.console.log(window) will display the window object itself in the console.
+
+The window object represents the browser window and serves as the global object in a browser environment. It provides access to various properties and methods related to the browser window and the web page.
+
+When you execute window.console.log(window), the console.log() function is called, passing the window object as the argument. In the console, you will see the output representing the window object, which may vary depending on the browser and its version.
+
+The output will typically show the properties and methods of the window object, such as document, location, innerWidth, setTimeout, alert, and many more. It provides a comprehensive view of the available properties and methods that you can access and utilize within the browser window.
+
+console.log(document.body)//what console.log(document.body) will display 
+The code console.log(document.body) will display the <body> element of the current HTML document in the console.
+The document object represents the DOM (Document Object Model) of the current web page. It provides access to the structure and content of the HTML document.
+When you execute console.log(document.body), the console.log() function is called, passing document.body as the argument. In the console, you will see the output representing the <body> element of the HTML document.
+The output will typically display the <body> element along with its attributes and child elements, if any. For example, if your HTML document has a <body> element with some content, you will see the corresponding representation of that <body> element in the console.
+By logging document.body, you can inspect and access the properties and methods of the <body> element in your JavaScript code, allowing you to manipulate its content, style, or perform other operations as needed.
+
+
+document.body.style.background = "yellow"
+dom stands for document object model . that means your whole html page becomes an object called document object .
+now what is document , document is the javascript representation  of the code . 
+you want to change something using js when you can change that using css? so the answer is because sometimes what does user do which event is going on 
+we will have to change the property and some values accorading to that . suppose if you want that when a user does somthing the background of the page must change ti red .
+or an image must be apllied to the background . that you can do with the help of the javascript . you can't just go and dynamically change the style sheets bcz it will remain 
+constant in style.css . and that's why the js is the brain of the webpage . javascript controls how to use things logically in a web page it helps you deal with that . 
+and yeah you can do manipulation in css through javascript . 
+
+browser object model (BOM) represents additional objects provided by browser . like if you need more objects and want to do manipulation on the 
+host environment . so let's say i want that when a user perform an action by clicking on a button so they will get redirected to google.com and if 
+they click on the second button they'll get redirected to facebook.com , i can make them do this with help of bom .(notes -chapter 6 )
+
+29.js--> 
+context -->  
+practice set --> chapter 6
+
+
+use style.background to change the background color?
+document.body.style.background = color
+
+// write a program return true if the age is greater than 18 and false if not . 
+let runAgain = true;
+const canDrive = (age) => {
+  return age >= 18 ? true : false
+}
+while (runAgain) {}
+  if (canDrive(age)) {}
+  else {}
+
+30.js-->
+context-->
+// Water & Gun game in JavaScript.
+// The game should ask you to enter S, W or G. The computer should be able to randomly generate S, W or G and declare win or loss using alert
+// Use alert, prompt and confirm whereever required!
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water, Gun Game</title>
+</head>
+<body>
+  <h1>Water, Gun Game</h1>
+  <button id="water">Water</button>
+  <button id="gun">Gun</button>
+
+  <script>
+    // Event listeners for the buttons
+    document.getElementById("water").addEventListener("click", function() {
+      playGame("water");
+    });
+
+    document.getElementById("gun").addEventListener("click", function() {
+      playGame("gun");
+    });
+
+    // Game logic
+    function playGame(userChoice) {
+      // Generate a random choice for the computer
+      let computerChoice = generateComputerChoice();
+
+      // Determine the winner
+      let result = determineWinner(userChoice, computerChoice);
+
+      // Display the result
+      alert(result);
+    }
+
+    // Function to generate a random choice for the computer
+    function generateComputerChoice() {
+      let choices = ["water", "gun"];
+      let randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
+    }
+
+    // Function to determine the winner
+    function determineWinner(userChoice, computerChoice) {
+      if (userChoice === computerChoice) {
+        return "It's a tie!";
+      } else if (userChoice === "water" && computerChoice === "gun") {
+        return "You win! Water extinguishes the gun.";
+      } else if (userChoice === "gun" && computerChoice === "water") {
+        return "You lose! Gun gets soaked by water.";
+      } else {
+        return "Invalid choice. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+32.walking the dom.js-->
+chapter 7 
+context -->  
+explain what is walking the dom is .
+how many types of nodes are there ? (ans is in notes chapter 7 )
+In the DOM (Document Object Model), there are several types of nodes that represent different elements and entities within an HTML document. Here are the main types of nodes in the DOM along with examples:
+
+Element nodes:
+
+Example: <div>, <p>, <span>
+Represents HTML elements in the document.
+Text nodes:
+
+Example: Text within an element like <p>This is a text node</p>
+Represents the actual text content within an element.
+Comment nodes:
+
+Example: <!-- This is a comment -->
+Represents HTML comments within the document.
+Attribute nodes:
+
+Example: <a href="https://example.com">Link</a>
+Represents attributes of an HTML element, such as href, class, id.
+Document nodes:
+
+Example: document
+Represents the entire HTML document and provides access to other nodes.
+Document type nodes:
+
+Example: <!DOCTYPE html>
+Represents the document type declaration, specifying the type of document.
+Processing instruction nodes:
+
+Example: <?xml-stylesheet type="text/css" href="styles.css"?>
+Represents processing instructions within the document, often used in XML documents.
+Here's an example of how these node types can be represented in the DOM:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Nodes Example</title>
+</head>
+<body>
+  <div id="myDiv" class="container">
+    <!-- This is a comment -->
+    <p>This is a text node</p>
+  </div>
+
+  <script>
+    // Accessing different node types
+    let elementNode = document.getElementById('myDiv');
+    let textNode = elementNode.childNodes[1].firstChild;
+    let commentNode = elementNode.childNodes[0];
+
+    // Logging the node types and their values
+    console.log('Element Node:', elementNode);
+    console.log('Text Node:', textNode);
+    console.log('Comment Node:', commentNode);
+  </script>
+</body>
+</html>
+In the above example, we have an HTML structure with a <div> element containing a comment node and a text node. The JavaScript code accesses these different node types using the getElementById, childNodes, and firstChild properties.
+
+By running the code and inspecting the console, you can see the different node types logged along with their corresponding values.
+
+These examples demonstrate how different node types are used in the DOM to represent various elements, content, comments, attributes, and other entities within an HTML document.
+play around with document.body, document.head in console ? 
+and also try other document elements too ? 
+what is direct children ? and siblings ?
+use firstchild, lastchild and childnodes in the the console ? 
+
+
+
+
+what is the meaning of dom manipulation?
+whenever we access a html page and then try to manipulate many elements inside it using javascript . we call it dom manipulation . 
+there is one important thing you must know that inside html there is html root and inside the root there is head and body and they both have their childrens  inside them .
+if you write your code wrong sometimes brower autocorrects it . 
+
+notice :when you use first child , text nodes are also counted .
+notice :one thing is also important that the child nodes are like array .
+we can also convert shild nodes in an array like you need to do , let arr= array.from --> list to array 
+access notes chapter 7 --> child nodes li-ooks like an array but its not actually an array but a collection . 
+ 
+
+elem.childnodes[0]===elem.firstchild 
+elem.childNodes[elem.childnodes -1]=== elem.lastchild 
+
+
+33.js-->
+context --> in the dom collection we saw that  using first child , last child and child nodes we dont get an array as output , we get a node list and we  cant use array methods  on  nodelist  .
+explain few dom  collection properties .
+what is $0 in js .
+what does it mean that dom collection is read only ?  explain with examples ? 
+select an element of the dom . and 
+use $0.childnodes,$0.nextsibling on it . 
+use $0.parentnode onit  . and 
+sue $0.parentelement on it . 
+and state the figure out the difference between them . 
+
+
+
+
+console.log(document.body.firstChild)
+console.log(a.firstChild.nextSibling)
+a = document.body.firstChild
+console.log(a.parentNode)
+console.log(a.parentElement)
+lets first look at dom collection properties 
+first of all , read only i.e. we can only read them . 
+
+if you have an element and it is marked with $0 that means you selected that element . (also if you hover it will say use $0 in the console to refer to this )
+also if you write $0 in the console then it will print the element you selected.
+and $1 is the element you selected before this .  and we can also do like $0.childnodes and it will represent a node list . $0.nextsibling will bring the next element of it . 
+
+what is the diffe between parentelement and parentnode is -->
+parentNode will only return something if it is a  node .  it will return in case of  text node,comment node  in case of invalid html it will return null means nei .
+
+
+if in any case its not working try compressing the html file like removing spaces , moving comments . 
+note: when we run methods like firstchild , nextSibling we get nodes other than elements too like comment nodes , text  nodes tooo. 
+
+
+
+
+34.js-->
+context--> 
+make a demo site select an element  then run firstChild and first element on it?
+also fogure out the difference between them . 
+
+
+
+
+
+const changeBgRed = () => {
+    document.body.firstElementChild.style.background = "red"
+  }
+ let b = document.body
+  console.log("First child of b is: ", b.firstChild)
+  console.log("First Element child of b is: ", b.firstElementChild)
+
+the difference between   firstChild and first element on it? is firstChild returns the very first node after the element regardless of node type . like  commentNode , textNode or can be the element .
+but firstElementChild ruturns  the true  element child. 
+
+
+35.table based navigation. js-->
+context--> 
+make a quickly using bootstrap and add a caption to it . then use table navigation mathods on it . 
+t.rows, t.caption , t.tHead ,t.tFoot, t.tHead.firstElementChild,t.tBodies,  on it . 
+
+
+let t = document.body.firstElementChild.firstElementChild
+console.log(t)
+console.log(t.rows)// t.rows returns all the rowws of the table in form of html collection . 
+console.log(t.caption)
+console.log(t.tHead.firstElementChild)
+console.log(t.tFoot)
+console.log(t.tBodies)
+console.log(t.rows[1].rowIndex)
+
+
+36.searching the dom methods.js-->
+context--> 
+make a card element using bootstrap  with class -card-title. 
+and use getElementsByClassName to get all the elements using  card-title. and use getElementsByClassName[0] to get the first element of it . 
+change the title color to blue . 
+explain what is querySelector and querySelectorAll. 
+using querySelector and querySelectorAll change colors of elements anywhere you like . 
+
+
+
+
+
+document.querySelector(".this").style.color = "black"
+document.querySelector(".this").style.background = "red"
+
+console.log(document.getElementsByTagName("a"))
+console.log(document.querySelector(".card").getElementsByTagName("a"))
+console.log(document.getElementsByName("search"))
+
+let ctitles = document.querySelectorAll(".card-title")
+ctitles[0].style.color = "blue"
+ctitles[1].style.color = "red"
+ctitles[2].style.color = "green"
+ctitle.style.color = "blue"
+
+note : the getElementsByClassName element returns  all elements using given calssname . but getElementById returns only one element .
+just because class can be same for multiple elements but id is alwaays unique to  an element . 
+note: querySelector returns one element and querySelectorAll returns all element . 
+38.js-->
+document.getElementsByTagName("nav")[0].firstElementChild.style.color = "red"
+Array.from(document.getElementsByTagName("li")).forEach((element) =>{
+  element.style.background = "cyan";
+})     
+
+
+41.js -->
+context--> notes chapter 8 
+document.body.firstChild.nodevalue ,document.body.firstChild.data, innerHTML,outerHtml,document.body.textContent, 
+what is the difference between console.dir and console.log . 
+open the console and use console.log(document.getElementById) and console.dir(document.getElementByTagname) on an element ? 
+what is tagname and what is node name ? and what is the difference between them ? 
+and also use them  in the cosole on the documet object . 
+what is inner and outerHtml ? when its is used ? use them in the console on the document object ? 
+then set/add an innerHTML in the dom too ? 
+test document.body.firstChild.data in the console . 
+test document.body.firstChild.nodevalue  in the console . 
+test document.body.textContent  in the console . 
+
+
+
+
+// let x = document.getElementsByTagName('span')[0]
+// console.log(x)
+// let y = document.getElementsByTagName('span')[0]
+// console.dir(y)
+// console.log(document.body.firstChild.nodeName) 
+// console.log(document.body.firstElementChild.nodeName)
+// first.innerHTML 
+// first.innerHTML = "<i>hey I am italic</i>" 
+// first.outerHTML 
+// first.outerHTML = "<div>hey</div>"
+// document.body.firstChild.data 
+// console.log(document.body.textContent)
+// first.hidden = false
+
+
+innerHTML returns innerHTML of the tag  as a string only valid for element nodes . and outer element returns the element as well as the content inside the element . 
+remember we can set both , inner and outer html . 
+notes  : console.log shows the element in the dom tree console.dir shoes the element as an object with its properties .  
+notes: tagname used to read tag name of the element . tag name only exists for element nodes and nodeName exists for any(text nodes/ comment nodes ) type of nodes . 
+now is innerHTML is used to see the content inside then no we can also use document.body.firstChild.data to display  the content but its works on text node only  . 
+this also  document.body.firstChild.nodevalue  shows content . 
+document.body.textContent returns text content of the page with this you can copy the whole page as a text . 
+whenever you go to s website and you want to copy the whole website and you want to copy the whole website as text, you can write this. 
+hidden property , if you have hidden any of the attribute of an element , if you have applied hidden attribute like this . 
+<span id='first' hidden >  ia am span <span> then this  ia am span  will not be seen in the window . but if i select the element and say $0.hidden = false or first(id)=hidden 
+then it will be visible. 
+
+42.html  attributes and their methods.js -->
+context-->
+first  set hidden to an eleent then use getAttribute to check and  hasAttribute to see if an element has a certain attribute or not in the console .
+and then use removeAttribute  to remove it in the console . 
+also make a custom attribute using data- and use that .
+
+
+
+
+let first = document.getElementById("first");
+let a = first.getAttribute("class")
+// console.log(first.hasAttribute("class"))
+// first.setAttribute("hidden", "true")
+// first.removeAttribute("class")
+console.log(first.dataset.game)
+
+hasAttribute to check existence of an attribute . and getattribute is used to get the value of an attribute . 
+ 
+
+43.HTML insertion methods .js -->
+context-->
+insert html using getElementByTagname . create a new div in javascript then 
+and show how you can do the same by creating an element. 
+then use loops to insert 10 element and they should contain hello world 1,2 ,3 and so on . 
+also add any text in front  of the hello world 10 and at the end of hello world 10 using append and prepend js methods . 
+then  add 'i am start' before  hello world 1 using .before and add 'i am end ' after  hello world 10 using .before . 
+then replace some nodes with other node 
+
+
+let div = document.createElement('div');
+// a.append(div);
+// a.prepend(div);
+// a.before(div);
+// a.after(div);
+// a.replaceWith(div);
+// a.appendChild(div)
+// a.innerHTML = a.innerHTML + '<h1>Hello World!</h1>';
+
+when you use innerHtml you have to suly the string as html.but in this case we can also use of for loops . 
+then use loops to insert 10 element and they should contain hello world 1,2 ,3 and so on . 
+so will you create a string using for loop ? then innerHTML= {string}  which is not much convenient . 
+you can do this remaining in pure javascript  by using creatElement . 
+for inserting small things you can use innerhtml. 
+but if i want to place many objects strategically then i will use document.createElement. 
+
+
+44.insertion methods.js-->
+context--> insert Adjacent HTML/Text/Element $ node removal
+make an element first then add an element at the afterbegin,aftereend,beforebegin,beforeend.
+then also remove them using node removal method .  
+
+
+first.remove()
+// first.insertAdjacentHTML('afterbegin', '<div class="test">afterbegin</div>');
+// first.insertAdjacentHTML('aftereend', '<div class="test">afterbegin</div>');
+// first.insertAdjacentHTML('beforebegin', '<div class="test">afterbegin</div>');
+// first.insertAdjacentHTML('beforeend', '<div class="test">afterbegin</div>');
+
+by using node.remove() we can remove nodes/ tags on html . 
+
+45.classList in js.js-->
+context--> 
+explain what is classList?  
+make a simple website where when you write color in the class then that becomes bg color of the window . 
+add more than one class to that and showcase classlist on it . 
+remove one chosen class using id.classList.remove().
+add one chosen class using id.classList.add().
+and in the end use toggle method on it . 
+check if an element color is yellow or not and if it is not  then make it yellow  using toggle method.  
+check if an element contains a class or not  using id.classList.contains() method.
+
+
+
+first.className = "text-black red"
+first.classList.add("red")
+first.classList.remove("red")
+first.classList.contains("red")
+first.classList.toggle("red")
+
+we use space seperation to  add more than one classes in the className . 
+notes : what does toggle method do ? it removes one class if its there and adds there if it is not there, in an element  . 
+
+notes :one good exampke of toggle is , let's say there is an alert and i want to show it when the user is not logged in . 
+so what i can do in here is i will add hidden class then i will toggle it based on whether it is already there or not . if the class is there remove it and if its not there then add a class . 
+
+46.setTimeOut and setINterval.js-->
+context-->
+use setTimeOut method to tell the user about you aftere 5 seconds . 
+then clear that timeout too .also make a function to clear the timeout if  i type b in the alert . 
+show case the timerout in the console . 
+use setInterval to display a msg again and again . 
+and you have to o=do exactly the same for setInterval using function ith arguments . 
+
+
+
+document.write("Hello")
+setTimeout(sum, 1000, 1, 2, 7)
+// setInterval(function() {
+// let a = setTimeout(function() {
+// if ("n" == b) {
+// TimerID
+//clearTimeout(a)
+//const sum = (a,b)=> {
+//  console.log("yes i a  running " +(a+b))
+//  a+b
+//}
+//setTimeOut(sum,1000,1,2,7)
+
+setTimeout is used to run javascript after a a timeperiod and setTimeInterval is used to run javascript  repetedly after every cretain timeperiod or after a set period of time . 
+
+47.browser events and handling events.js-->
+context--> 
+explain what is browser events . 
+make a div and use onclick to to show an alert msg ang with a console msg  whenever we click on the div. (in html file )
+write a method with onclick to show text and an alert mwith onclick.(in html file )
+use mouseenter method to display an alert and console.log . (in html file )
+make use of onclick in the js file . 
+
+
+
+a.onclick = () => {
+  let b = document.getElementsByClassName("container")[0]
+  b.innerHTML = "Hello World!"
+}
+
+the origin/backstory of browser events : 
+the main problem was with js that you can not write this/big js in the onclick ,even if its possible but its not maintainable and it will also not look so good . 
+and so the solution of the problem is what we will do is instead of doing this , we will look at one more method to handle events .(refer notes for more )
+
+
+48.EventLIstener's in js .js-->
+context--->
+what is the use of EventLIstener's ? 
+add an handler to an button. 
+first make a buttin in div. and then go to the js file and add two  an eventlistener of alert for click . 
+first answer what input prompt takes ? 
+make a prompt and if the input is 2 then  remove the EventLIstener. 
+explain what is console.log(e)/console.log(event) and what does it returns  ? 
+what is event and event object ? 
+
+let x = function(event) {
+    console.log(event.target)
+    console.log(event.type, event.clientX, event.clientY)
+    // alert("Hello World1!")
+  }
+  let y = function(e) {
+    console.log(e)
+    alert("Hello World2!")
+  }
+  btn.addEventListener('click', x)
+  // btn.addEventListener('click', y)
+  // let a = prompt("What is your favorite number?");
+  // if (a == "2") {
+  //   btn.removeEventListener('click', x)
+  // }
+  
+
+
+notes: addEventListener is used to assign multiple  handlers to an event . 
+let's assume you want a work to be done whrn a click happens and multiple handlers to an event means one task will be done along with another task . 
+lets say you want to apply eventlistener for task a  you  are running a function task a as well as a function task b . you could have achieved this task by running htem in a single lister. 
+but you choose different. now you'vs changed your mind and you want task A or in some situatios arises in your program. that you wanr task  A to not get executed . 
+it should not run on any event/click but task B should run . you can achieve this only by using multiple handlers on an event. i will explain you what i'm 
+saying and why it is so important . 
+make a prompt and if the input is 2 then  remove the EventLIstener. 
+imp notes(chapter 8): removeeventlistener dont work on different function object . the reference have to be same in caase if removeEventListener
+to work. and how to make reference same . wrap the removeeventlistener in a variable then use  pass that as argument .   
+console.log(e)/console.log(event)  returns a pointerEvent which is an event objct which shows many things .  
+it can be used for various taks , like e.target it will show what is being done/clicked in the window . 
+also i can inspect this object and see what all htings ar epresent in this object . here i can see many things like clientX,clientY(are coordinates of the cursor ), compose , currentTarget , 
+also i can see many rhings including the path which is showing wheere it came from . 
+
+what is event and event object ? 
+when an event happens the browser creates an event object  puts details into it passes it as an argument to the handler .
+one thing if you write the event as an argument then you also need to write "event" inside the function too. 
+event is denoted by writing event or e. some of the methods are e.target, e.type , e.currentTarget etc. etc. 
+where currentTarget defines which event handled this event bcz if you have applied event to a box then its element will also have that event , you will have to remember this also. 
+
+49.practice set chapter 8 .js-->
+context--> 
+1. write a program to show different alerts when different buttons are clicked .
+2.create a website which is capable of storing bookmarks of your favourite websites using href .
+3. repeat Q2 using event listeners . 
+4. write a js program to keep contexts of a website(every 5 seconds) 
+
+
+
+
+
+
+
+// document.getElementById("google").addEventListener("click", function() { 
+//   window.location = "https://www.google.com";
+// win.focus();
+// const fetchContent = async (url) => {
+//   con = await fetch(url);
+//   let a = await con.json()
+//   return a;
+// }
+// setInterval(async function() {
+//   let url = "https://jsonplaceholder.typicode.com/todos/1"
+//   console.log(await fetchContent(url))
+// }, 3000)
+
+
+51.clock using .js-->
+let a = new Date()
+let h = a.getHours()
+let m = a.getMinutes()
+let s = a.getSeconds()
+let d = a.getDate()
+console.log(h, m, s, d)
+
+50.js--> 
+make use of api and do something anything with that.
+
+51.js-->
+make a clock using using js . 
+let a = new Date()
+let h = a.getHours()
+let m = a.getMinutes()
+let s = a.getSeconds()
+let d = a.getDate()
+console.log(h, m, s, d)
+
+
+
+52.callbacks,promises , pyrsmid of doom, callback hell, async , await.js-->
+context--> 
+what are synchronus programming  ?
+what are asyncronnus programming  ?
+what are callbacks ? showcase the callbacks with yoour own practical concept. 
+take a script and make a system such that it will inform us whenever the script will be loaded and runs another function .
+also make an function to handle error if fails to load . 
+is callback  synchronus or asyncronnus ?
+
+
+
+example of synchronus code is --. 
+let a = prompt("what si your name ?)
+let b = prompt("what si your age ?)
+let c = prompt("what si favorite food  ?)
+console.log(a+b+c)
+run it and you will see this code will run one by one , it will not bww like b's value eill set before a  or c's value will set before b that would not be done . 
+
+example of synchronus code is --. 
+console.log('start')
+setTimeOut(function(){
+  console.log("i'm'+prompt("what is your name "))
+},3000)
+console.log('end')
+run this code and yiu will see the line runned after that as this line was asyncronnus it got scheduled .
+it was not like it stopped code execution, this line was schediled and thrown in the backgroud and after that this one 
+got executed this is asyncronnus programming.
+
+
+
+
+// Callbacks
+function loadScript(src, callback) {
+    var script = document.createElement("script");
+    script.src = src;
+    script.onload = function() {
+      console.log("Loaded script with SRC: " + src)
+      callback(null, src);
+    }
+    script.onerror = function() {
+      console.log("Error loading script with SRC: " + src);
+      callback(new Error("Src got some error"))
+    }
+    document.body.appendChild(script);
+  }
+  
+  function hello(error, src) {
+    if (error) {
+      console.log(error)
+      return
+    }
+    alert('Hello World!' + src);
+  }
+  
+  
+  function goodmorning(error, src) {
+    
+    if (error) {
+      console.log(error)
+      sendEmergencyMessageToCeo();
+      return
+    }
+    alert('Good morning' + src);
+  }
+  
+  loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", goodmorning) 
+  //cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", goodmorning) 
+
+what is asyncronus programming / so asyncronus programming are that actions which i initiated now then it will complete . 
+when? we will not worry about that  but it eill complete . and  setTimeout is a good example of it . 
+and what is synchronus action ? sychronus action is which runs one by one.
+callbacks are the functions whih are passed as the arguments which is then invoked inside the outer functionto complete an acrion . 
+so, callback function is a function which you give and that will be executed whenever thst action completes. 
+
+53.callback hell and pyramid of doom .js-->
+context-->
+now the question should we alwaays use callback? the answer is no . we should not use  callbacks.
+i am not saying callbacks should never be used  but  there are some downsides which will force you to think .
+use callbacks . 
+
+
+
+
+we have studies in our last video , we saw that we pass a function to another function and as soon as that function do some work 
+our callback runs from which we get to know that our work is done .  we also have seen error handling . 
+
+
+
+    script.onload = function() {
+            callback(null, src);
+    script.onerror = function() {
+loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", function goodmorning(error, src) {
+            sendEmergencyMessageToCeo();
+
+
+so the biggest problem with the callbacks is that we give complete control . for which we use promises .
+and the seconde problem is the pyramid of doom ,which is also called callback hell .
+pyramid of doom is actually nothing but callback inside callback which also reduces the readablity of our code and which causes pyramid like structure . and the solution s=is also promises .  
+so is this programming style bad ? no its not bad either . you can use it definately but if you have callbaccks after callback dont use it , 
+you can use it for 1-2 callbacks .
+
+54.js-->
+context-->
+what is promise in js? what is the names  of two states in promise ? 
+create a promise with resolve and run it . 
+why we use promises ?
+do all these by yourself -->
+//fetch google.com ==> alert('google.com homepage done ')
+//fetch data from data api ==> alert('')
+//fetch pictures from the server
+//print downloading .
+
+
+why we use promises ?
+suppose you want to do--> 
+//fetch google.com ==> alert('google.com homepage done ')
+//fetch data from data api ==> alert('')
+//fetch pictures from the server
+//print downloading 
+so will want that this thing should work parallelly ,thins thing should work parallelly then this thing should  work parallelly and after that below your rest of the script keeps on working ok .
+so you woukd not want that this should block your thread because this , this and this work can be done parallelly.
+so understand that  we use promise for parallel execution. 
+and why do we use for parallel execution ?
+because this , this and this thing there is no point of doing it one after the another .
+
+
+
+
+
+let promise = new Promise(function(resolve, reject) {
+    alert("Hello")
+    resolve(56)
+})
+
+
+promise is a promise of code execution. the code whether executes or fails ,in  both cases the subscriber will be notified .
+the names  of two states in promise is resolve or reject . and on top of that you can make your own custom promises too. 
+
+55. .then and .catch method .js-->
+context-->
+create a promise with resolve and reject then also make 5 more promises and run them to see if they run parallelly or not
+and also use .then and .catch on them  . 
+what are .then and .catch methods / and when they are used ?
+
+
+chap 9 notes 
+let p1 = new Promise((resolve, reject) => {
+    console.log("Promise is pending")
+    setTimeout(() => {
+            // console.log("I am a promise and I am resolved")
+            resolve(true)
+    }, 5000)
+})
+p2.then((value)=>{
+    console.log(value) 
+},(error)=>{
+    console.log(error)
+})
+
+
+.then and .catch method--> the consuming code can receive the final result of a promise through then and catch . 
+the most fundamental one is then you can pass two functions as an result ad error . 
+and how will you handle error you will use .catch . 
+
+
+57.promise chaining .js-->
+context--> 
+what is promise chaining ? give a case example . 
+create a promise and and resolve it with another promise then use its return value in .then . 
+explain how we are solving callback hell problem by using promises . 
+create an custom promise inside .then . 
+
+
+
+p1.then(() => {
+    console.log("Hurray")
+    return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                    resolve(4)
+            }, 6000)
+    })
+}).then((value) => { console.log(value) })
+
+p1.then(() => {
+    console.log("Congratulations this promise is now resolved")
+})
+
+
+what is promise chaining -->
+lets say you have a promise and you want that when the promise gets fulfilled then you want to see it's result in next .then 
+and this  .then's result into the next .then. so this meehod you can attach many .then eith a single promise .
+what we actually do is we resolves the values one afer another and by this we will solve our callback hell problem .
+we can also create custom promises inside .then .
+make loadscript usinf=g prmises . 
+
+
+59(video).attaching multiple handlers to a promise . js-->
+create a promise that first show alert and resolve with value 1  then showing hey i am resolved .
+what is the diiference between promise chaining and attaching handlers .
+demonstrate both via loadscript function . 
+
+
+
+
+
+    // delhiWeather.then(alert)
+    // bangaloreWeather.then(alert)
+    console.log("Fetching Delhi Weather Please wait ...")
+    let delhiW = await delhiWeather
+    console.log("Fetched Delhi Weather: " + delhiW)
+    console.log("Fetching Bangalore Weather Please wait ...")
+    let bangaloreW = await bangaloreWeather
+    console.log("Fetched Bangalore Weather: " + bangaloreW)
+    return [delhiW, bangaloreW]
+    const cherry = async () => {
+    console.log("Hey I am cherry and I am waiting ")
+}
+
+when we attach handlers , they runs irrespective of each other i.e one process does not blocks the other one or more simply asyncronnusly . 
+but in the promise chaining the execution done one by one in order . 
+
+
+61/58-folder.using promise api .js-->
+context-->
+you get so me=any methids in the promise api. for example, you may be givrn an api that allows you to run once all promises have beeen met .
+if you have 10 promises to meet, you can wait  for all of them utilizing promise api. we will talk about 6 rimay methods .
+
+
+
+now is the turn for promise api. its not a heavy topic . the promise class just gave us some methods to make our life easy. methods are --> 
+1. promise.all 
+make 3 pmises. 
+now we already know that all these promises will run togrther .but i eant ehen p1, p2 ,p3 all are fulfilled after that something to show up on the console. 
+when all 3 of my promises are fulfilled , then i want want to see 3 values together . now how will you do that ?
+and with the help of a promise.all i made my promise  .when ever i ake promise.all and thereaafter  give an array and i type all three promises after giving an array.
+so once all three are resolved  , an aarray of their valued will be created .
+
+2. promise.allsettled 
+assume i reject one of these promises , nnow you get to see the error here but can you sense one thing ? you sensed your promise .all did not work and you 
+get to see an error herre . and i will have to catch it by combining this promise.all with .catch but i want that even if one of the romises fails , i get the result too .
+so , what i'll do instead of promise.all we'll use allSettled . 
+even when one promise got rejected , er did not get any error , wwe get status and value of our promise here. 
+
+3.promise.race 
+what it will do id ? whoever resolves first will be displayed here . 
+
+4.promise.any 
+what eould have happened if p2 had been rejected ? so an error will occur because codde threw an error . but i need  a valur that resolves 
+so that i didn't get an error , then i will use promise.any insted of promise.race  .
+
+
+5.promise.resolve 
+ in promise.resolve  , you provide a value to proise.resolve and it returns you a resolved promise. 
+
+6.promise.reject 
+promise.reject returns you a rejected prmise along with an error , got it . 
+
+
+
+
+
+
+
+
+
+
+    try{
+            setTimeout(()=>{ 
+                    console.log(rahul)  
+            }, 100)
+    }
+    catch(err){
+            console.log("Balle balle")
+    }
+
+try {
+    let age = prompt("Enter your age")
+    age = Number.parseInt(age) 
+    if(age>150){
+    throw new ReferenceError("This is probably not true")
+    }
+} catch (error) {
+    console.log(error.name)
+    console.log(error.message)
+    console.log(error.stack)
+}
+
+
+
+62/59-notes.async/await.js-->
+context-->
+first make an  async function harry then make  delhiWeather & bangaloreWeather and showcase async , await function. 
+do we need function calls in js ?
+prove that await function stoping the execution of the code .?
+why/when you use the async and await function ?
+what is the difference between async and await function? 
+showcase async/await function practical use cases ? 
+
+
+you may not like syntax of .then , frequently using .then may lead you to forget. let's say you have solved the callback hell problem 
+but there is a chance you may forget your way in the frequent use of .then , you don't need to do that. 
+instead you cn use async/ await syntax insiide a function.
+
+there is a special function with this we can any function async and then we can await promises too and an async function always returns a promise . 
+(refer the notes for more imp details )
+
+make a async function then use .then on it to display something . 
+
+but what are the gains cdo we get here? why would javascript developers did such a thing ? 
+they did so because let's say you have 2 promises one p1 and another p2, now make a function which wraps two other functions
+which will be displaying two different things in different times  and now add async to them .   
+
+
+what will happen is it will run timeout methods parallelly but then when it encounters/notices the await function it'll stop. 
+it wont move ahead untill the promise resolves and only after that it eill fulfilled the next  one .
+
+
+prove that await function stoping the execution of the code . (refer the video 13:00) 
+
+so it actually stopped functions execution in a way . otherwise , this is very tough to do in javascript . 
+now what you can do? you can cotrol the flow of your programme as it pleases you .if you code in js , then 
+tell me how the code is executed , the 1st will run , the 2nd will run , teh 3rd will run then callback will run the 4th will run 
+and then callback will run .so you can never stop the execution . assume that , you made a variable a, a variable b, a variable c,
+and to make variable d you need c.but value c was a promise that never resolved , so it's the problem .but doing something like this will
+create a process which will provide the value which you have to use first . the needed value , where you want to stop the execution.
+use the await keyword where you want to await the promise, async your promise .make the whole function an async function. 
+different async functions , are executed in parallel.  
+
+
+const f = () => {
+    try {
+            let a = 0;
+            // console.log(program)
+            console.log("Program ran successfully")
+            return
+    }
+    catch (err) {
+            console.log("This is an error")
+            console.log(p)
+    }
+    finally {
+            console.log("I am a good boy")
+            // Close the file
+            // Exit the Loop
+            // Write to the log file
+    }
+}
+f()
+
+
+63/60-notes.errornhandling.js-->
+context-->
+(to scare your friend)make one setTimeOut function where display "Hacking wifi.... Please wait..." after 1s  "Balle balle",  "Fetching username and password.... Please wait..."   ,  "Hacking Rahul's facebook id.... Please wait...","Username and password of Rahul (+919356700001) fetched.... Please wait..."
+make 8 setTimeOut function then set their timer to 1,2,3...8 seconds.
+now make a purposeful error in them .
+then write try and catch method to handle this . 
+write  a  piece of scheduled code in try-catch to check if it still handles it ot not . 
+
+you will see because of that when it sees error it will stop the rest of the code execution the rest can't run .
+but you want that since your remaining a=code nu==must run even if you make a mistake . 
+lets say you want to fetch something from the network .. but it returned an error .but when an error appears , you till want to contonue . 
+the syntax for such a task is  "try catch" . it says first  , see if it runs in anyway and after trying if you still don't get 
+rahul runing then dont throw an error . you are saying to launch a console.log(error) , you are saying dont stop the 
+script . instead while handling this , i needed that eroor into the console.  (refer the notes)
+
+
+notes: try and catch works syncronusly and scheduled code will not be handled by it . 
+as after scheduleing , its nnot try-catch's guarentee that it'll work you have to type try catch in it for that ,if you do so
+then it will be handled too.
+
+
+await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js")
+    console.timeEnd("run")
+
+
+64.js-->
+context--->
+create a digital clock using setTimeout and date object as javascript . 
+
+check tthe 64th file. 
+
+65.js-->
+context--->
+write a javascript program to procees to look like a hacker write an async functioon which will simply display the following 
+output :
+initializing hack program 
+hacking ashish username 
+username found ashish 17
+connecting to facebook 
+try to use html and styling if possible 
+make a hacker man.
+
+
+
+
+
+
+            body: JSON.stringify(todo),
+    let response = await p.json()
+
+const mainFunc = async () => {
+    let todo = {
+            title: 'Harry2',
+            body: 'bhai2',
+            userId: 1100,
+    }
+    let todor = await createTodo(todo)
+    console.log(todor)
+    console.log(await getTodo(101))
+}
+
+mainFunc()
+
+
+66.fetch api . txt -->
+context--> chapter 10 notes (very importent )
+go and fetch an whether api  from github and use it to show aheather of an area .  
+explain how fetxh api is working ?
+
+
+whenever we want to data from netwoork or on network which means on server we have to upload data then we use fetch api. 
+what are the specifics ? how convenient it is ? how doed it work with promise? 
+
+lets talk about fetch , javascript can be used to send  and retrive information using the network when needed.
+whenever you need anything that is in network , like whether like you want to use any api ,which is already made by someone for you .
+then you can do this . ajax whose full form is asyncronus javacript and xml. 
+
+ajax umbrella term , was used before , when with the help of xaml we used to take network requests,now adays json is used and fetch api is sused to make life easy .
+previously , xml http  syntax that was there in that xml was used and so it had the name ajax , sice then people started calling ajax  .
+and also today if you say to someone my page fetches data without loading , then they will ask you do you use ajax ? then hewill say yes. 
+because it is a umbrella term , you cant say that i dont use xml. ajax is not been used.your interviewer can also ask you this .
+
+
+fetch api returns a promise . simply give the url .we will see the options .for now , leave the options blank .
+the request you are sending without options that is a get request . we also have put request , delete request , post request .
+
+get request means you are bringing data grom the url .
+
+in fetch api , wheneveer you fetch anything then what happens is .. you get a promise . and that promise is resolved into one more promise 
+whose vakue is the final result . so that why you need to add .then two times . so getting an api is two stage process. 
+first tage gives status code(either 404 or 500 or server error) and also verything alright or not (means if i got the status code between 200 and 299).
+i will know here itself , my response worked properly , it eill true if everythinh is alright . after that look over if the status code is http or not (for example 200 ).
+so the main reason is you you come to know here itself that you don't get any response then you can take any action. 
+
+then you can do response.text , response.json there are many more mrthods .which you can use an advance js user. for example 
+you can do response.text to get the text ,in blog if you want to take data from blog you can use array buffer.
+
+read this chapter throughly and implement every single thing of it (very imp)
+67.post request .txt-->
+context-->we hit post request whenevet we ahave to send any big data to the server because there is limit in the get request 
+that how much data you can send in the url. 
+we will see from feth that how we canssend objects to the server . 
+
+jsonplaceholder-which is pre-fake rest api . to make a psot request we need to use fetch options . fetch(url,options) -- the second argument is options .
+so if we supply options then e=we can send post request now where we have to give these options  . post requwst wen we want to hit then we will post 
+the method here in options object and we are done so here we can us efetch api . if we go to the json place holder website we will see how the whole thing is done .
+
+also what is json placeholder ? json placeholder is just a website whivh helpd developers . you get a json placeholder , that is 
+here you hac=ve a mock fetxh api. 
+
+
+
+learn more about post request this from yt.  
+68.cookies. txt -->
+context--> refer notes 
+pros and cons of cookies.
+go to google.com print all the cookies .
+go to facebook.com print all the cookies .
+go to instagram.com print all the cookies .
+make and add a cookie in cookie list. 
+make a promput that asking what will be the cookie key.
+make a promput that asking what will be the cookie value.
+and then add that to the cookie list using encodeURLcomponenet then also displa=y that in the console too . 
+what are cookie options ? and does it used to set different cookies or one cookie with with various options ? 
+explore the various options that are provided by cookies .(video 12:00)+ (notes)
+limtations of cookies data?(notes)
+
+
+basically cookies are used to store the data directly inside the browser i.e. t want to store it as your username aloke. 
+so your username harry i can use cookies to store it . i will get all the cookies if i alert( document.cookie) in the console. 
+
+cookies are set by a web server using the set cookie http-header now look what happens when you make a request on this web server 
+so what will happen is that webserver will send you data in rsponse and what it can do is a cookie inside you which means the browser can 
+put a cookie inside it by using this header .it will do a header called  set-cookie and next time when you send a request to the same server 
+then what will happen that your browser will automatically send that cookie by putting it inside http-header. so what will happen is that server will know 
+that who is that client like let's say i give a unique id to each client . now if i am a web server then i will give 1 with the help of set cookie first to the client 
+then after that i will give 2 to the second client with the help of set cookie . 
+
+now you want to set your cookie on the page so i will say document.cookie="aloke=harry9900" --> this is used to add cookie to cookie list .
+and cookies are delimited by semi-colon. document.write is used to update a cookie . 
+let's say i have a key to a  cookie ok ,and one i have the value . 
+
+what does encodeURLcomponenet do is ? that is take any string and after doing this and then see it will encode it inside as a cookie . 
+also how we will decode is using decodeURLcomponenet . then 
+
+
+
+
+console.log(document.cookie)
+document.cookie = "name=harry1122334400"
+document.cookie = "name2=harry11223344002"
+document.cookie = "name=harry"
+let key = prompt("enter your key")
+let value = prompt("enter your value")
+document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+console.log(document.cookie)
+
+
+70.local storage. txt -->(refer notes)
+context-->
+why and when would use localstorage instead of cookies ? pros and cons of localStorage.
+demonstrate setItem,getItem , removeItem , clear,length, localStorage.key(0)to the endkey on localStorage. 
+when we use localStorage and demonstrate a practical case of localStorage with code. 
+state me one good  practical real  case where  localstorage of js are used
+explain in theory how does it work.
+
+
+(refer notes )
+local storage is used to store data in your browser for a particular domain , and also we will discuss how it is different from cookies. 
+local storage is a webstorage object which are not sent to the server with each request .
+if you have to set cookies then browser will send your cookoe with every request you dont want it to be sent with every request sometimes 
+as if you want to be of any client that you have to save a note of any person , who s accessing your website on any broeser
+? do you want in browser / you do not wan  to do in cookie because you would not want to because it will be sent with every request .
+and you dont want it to go to server again and again , ok thats why you will use local storage .
+
+plus if you saved something to local storage so even if you restart your browser even if you refresh youe paage . the data will not go anywhere 
+it will be safe. when you open up inspect window , and goes to application tab(next to console tab) , then go to local storage 
+which is like a database there are key value pairs and key and value are string here , ok .
+
+go to console and localStorage.setItem("name","harry") - e=which is settting up name key then cone back to the localstorage where 
+you will see them as a key-value pair and you can also edit it with right click. yeah its stored. now refresh it , and will i get harry ? 
+the answer is yes , now if you copy the url and open in new tab will i be  see the same thing ? and ans is yes(so it survives when your browser restatr as well ) 
+
+methods of localstorage(refer notes )
+
+
+
+
+
+
+// sessionStorage.getItem("name")
+// sessionStorage.clear()
+// sessionStorage.removeItem("name")
+// sessionStorage.setItem("name", "harry")
+// sessionStorage.removeItem("name")
+
+
+window.onstorage = (e) => {
+    alert("changed")
+    console.log(e)
+}
+
+
+70.sessionStorage.txt-->
+context-->(+refer the notes chapter 10 very important)
+sessionStorage and how it is different from local storage . 
+what is session storage .demonstrate sessionStorage.
+how it is different from cookies and localStorage. why we should consider this instead of resst.
+ideal cases to use it also demonstrate them all by yourself.
+add an eventlistener such that if i add something in sessionStorage then i should be notified in the console. 
+
+
+// sessionStorage.getItem("name")
+// sessionStorage.clear()
+// sessionStorage.removeItem("name")
+// sessionStorage.setItem("name", "harry")
+// sessionStorage.removeItem("name")
+
+
+window.onstorage = (e) => {
+    alert("changed")
+    console.log(e)
+}
+
+
+
+sessionStorage is very similar to localStorage abu obviously there are some differences llike data survives page refresh but not opening or closing of a tab .
+
+
+
+71.chapter 10 practice set.txt-->
+context-->
+1. use a fun api from the internet  and feed your app with lite data .
+2. create a note saying app which stores your note to storage .
+3.repeat the last question and fetch the note which was search .
+4. delete the note in the  previous question. 
+
+
+
+
+
+for (item in contests) {
+                console.log(contests[item])
+                ihtml += `
+                <div class="card mx-2 my-2" style="width: 22rem;">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOpMBTgrPtQuNSYqIzPVAEJgJbF7tWmT1LhnCrtAkFbe-_qgRXBj-25gZ0yuR_3sL6iNE&usqp=CAU" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                        <h5 class="card-title">${contests[item].name}</h5>
+                                        <p class="card-text"> Status is ${contests[item].status} and site is ${contests[item].site}</p>
+                                        <p class="card-text"> In 24 Hours? ${contests[item].in_24_hours} </p>
+                                        <p>Starts at: ${contests[item].start_time}
+                                        <p>Starts at: ${contests[item].end_time}
+                                        <a href="${contests[item].url}" class="btn btn-primary my-4">Visit Contest</a>
+                                </div>
+                        </div>
+                `
+        }
+        cardContainer.innerHTML = ihtml
+})
+
+
+
+72.hacker man.txt-->
+context-->
+practice hackerman again. 
+
+
+
+const showHack = async (message) => {
+    await sleep(2)
+    // console.log(message)
+    text.innerHTML = text.innerHTML + message + "<br>"
+}
+
+
+76.make an todo ist app which capable storing your todos in the localstorage andd an option to create , delete and access all the todos.try to make ui as good as possible.txt-->
+class RailwayForm {
+    submit() {
+      alert(this.name + ": Your form is submitted for train number: " + this.trainno)
+    }
+    cancel() {
+      alert(this.name + ": This form is cancelled for train number: " + this.trainno)
+    }
+    fill(givenname, trainno) {
+      this.name = givenname
+      this.trainno = trainno
+    }
+  }
+
+
+78.oops.txt-->
+context-->
+showcase oops in-code. explain pros and cons of oops incode .
+ demonstrate 4 pillars in code .
+ state me one good  practical real  case where  localstorage of js are used
+
+
+
+what is object oriented programming in terms of harry bhai? so if i ask you why we do programming ? we do it to make our real world work 
+easier .think of any programming your apps in phone also like i have a game , iwould make humans walk will make trees .if i 
+make any enemy it will be human being so if i'm coding every enemy seperately then the code reusability will not be so good 
+so if i want to define entity named human so how can we do that in orogramming? suppose i have to make 15 humans in game and similarly
+if you want to add any kind of properties how will you use ? you will make one entity of human or player , one coding and after that deffine some properties and 
+methods of it then as you say in real world harry.run or or harry.speak you could do this kind of things like real world .
+The Four Pillars of Object Oriented Programming-->
+1.Abstraction.
+2.Encapsulation.
+3.Inheritance.
+4.Polymorphism.
+
+75.prototypes.txt-->
+context.txt--> refer nontes chap 11 very imp 
+what is prototype in js ?  demonstrate prototype in js . 
+use __proto__ on a prototype ? 
+ state me one good  practical real  case where  prototype of js are used
+
+
+
+
+76.classes and objects in oops .txt-->
+context.txt--> > refer nontes chap 11 very imp
+demonstrate class of oops in js ? 
+demonstrate objects  of oops in js ? 
+
+
+77.constructor.txt-->
+context--> > refer nontes chap 11 very imp
+explain and demonsstrate what is constructor in js ? 
+make a RailwayForm using constructor.
+state me one good  practical real  case where  constructor of js are used
+
+78.INheriyence .txt-->
+context-->
+explain and demonsstrate what is inheritence in js ? 
+make a Animal class using inheritence.
+state me one good  practical real  case where  inheritence of js are used
+
+explain and demonsstrate what is Encapsulation in js ? 
+make a Animal class using Encapsulation.
+state me one good  practical real  case where  Encapsulation of js are used
+
+explain and demonsstrate what is Abstraction in js ? 
+make a Animal class using Abstraction.
+state me one good  practical real  case where  Abstraction of js are used
+
+explain and demonsstrate what is Polymorphism in js ? 
+make a Animal class using Polymorphism.
+state me one good  practical real  case where  Polymorphism of js are used
+
+
+
+
+79.extend keyword of oops in js. txt-->  class Programmer extends Employee {
+
+80/79-notes.method overriding. txt-->
+context--> 
+first make a class and give attributes to it and extend them using extends keyword .
+what is the use of extends keyword ? demonstrate the use of it on youur unique way.
+make class of Employee.make methods login,logout, requestLeaves, 
+make one more class Programmer which extends 
+
+
+
+class Employee {
+    constructor(name) {
+      console.log(`${name} - Employee's constructor is here`)
+      this.name = name
+    }
+    login() {
+      console.log(`Employee has logged in`);
+    }
+  
+    logout() {
+      console.log(`Employee has logged out`);
+    }
+  
+    requestLeaves(leaves) {
+      console.log(`Employee has requested ${leaves} leaves - Auto approved`)
+    }
+  }
+  
+  class Programmer extends Employee {
+    constructor(name) {
+      super(name)
+      console.log(`This is a newly written constructor`)
+    }
+    // constructor(...args){ ---> If there is no constructor in the child class, this is created automatically
+    //   super(...args)
+    // }
+    requestCoffee(x) {
+      console.log(`Employee has requested ${x} coffees`)
+    }
+    requestLeaves(leaves) {
+      super.requestLeaves(4)
+      console.log("One extra is granted")
+      // console.log(`Employee has requested ${leaves + 1} leaves (One extra)`)
+  
+    }
+  }
+  
+  let e = new Programmer("Harry")
+  e.login()
+  e.requestLeaves(3)
+  
+
+81.static methods.txt--> 
+context--> 
+what are static methods ? demonstrate the use of it on youur unique way.
+
+
+
+class Animal {
+    constructor(name) {
+      this.name = Animal.capitalize(name)
+    }
+    walk() {
+      alert("Animal " + this.name + " is walking")
+    }
+    static capitalize(name) {
+      return name.charAt(0).toUpperCase() + name.substr(1, name.length)
+    }
+  }
+  
+  j = new Animal("jack")
+  j.walk()
+  // console.log(j.capitalize("thisa")) // --- > this doesnt work
+  
+80.txt--> 
+make a class using constructor and then also override it . 
+
+81.txt--> 
+what are static methods? in js ? pros and cons of them .
+make a class animal then  make a static method in this .
+state me one good  practical real  case where  static method of js are used
+
+
+82.txt-->
+what are getters and setters methods? in js ? pros and cons of them .
+make a class animal then  make a getters and setters  in this .
+state me one good  practical real  case where  getters and setters  of js are used
+
+
+
+83.txt-->
+do all the questions by yourself . 
+
+
+
+
+    get real() {
+      return this._real
+    }
+  
+    get imaginary() {
+      return this._imaginary
+    }
+  
+    set imaginary(newImaginary) {
+      this._imaginary = newImaginary
+    }
+  
+    set real(newReal) {
+      this._real = newReal
+    }
+  }
+  
+  let a = new Complex(2, 4)
+  console.log(a.real, a.imaginary)
+  a.real = 10
+  a.imaginary = 10
+  let b = new Complex(6, 2)
+  a.add(b)
+  console.log(`${a.real}+${a.imaginary}i`)
+  
+  // class Human {
+  //   constructor(name, favfood) {
+  //     this.name = name
+  //     this.favfood = favfood
+  //   }
+  //   walk() {
+  //     console.log(this.name + "Human is walking")
+  //   }
+  // }
+  
+  // class Student extends Human {
+  //   walk() {
+  //     console.log(this.name + ": Student is walking")
+  //   }
+  // }
+  
+  // let o = new Student("Harry", "Bhindi")
+  // o.walk()
+  
+  // console.log(o instanceof Human)
+  
+  // StyleSheet.css 
+  
+
+84.js-->
+submit.addEventListener("click", (e) => {
+    e.preventDefault()
+    let titlec = title.value
+    let descc = desc.value
+    localStorage.setItem("todo", JSON.stringify([titlec, descc]))
+    console.log(e)
+    todo.innerHTML = `
+    <h1>${titlec} </h1>
+    <p> ${descc}</p>
+    `
+    title.value = ""
+    desc.value = ""
+  })
+  
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.removeItem("todo")
+    todo.innerHTML = ""
+  })
+
+
+
+86.IIFE.js-->
+WHAT is IIFE in js ? demonstrate in your unique way . 
+
+
+86.closures.js-->
+WHAT is closures in js ? demonstrate in your unique way . 
+
+86.hoisting.js-->
+WHAT is hoisting in js ? demonstrate in your unique way . 
+
+86.arrowfunction.js-->
+WHAT is arrowfunction in js ? demonstrate in your unique way . 
+
+86.scope.js-->
+WHAT is scope in js ? demonstrate in your unique way . 
+
+86.javascript modules.js-->
+WHAT is javascript modules in js ? demonstrate in your unique way . 
+
+86.destructuring.js-->
+WHAT is destructuring in js ? demonstrate in your unique way . 
+
+
+

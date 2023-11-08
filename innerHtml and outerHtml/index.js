@@ -1,0 +1,17 @@
+let x = console.log(document.getElementsByTagName('span')[0])
+console.log(x)
+let y = console.dir(document.getElementsByTagName('span')[0])
+console.log(y)
+console.log(document.body.firstElementChild.nodeName)
+console.log(document.body.firstChild.nodeName)
+console.log(document.body.firstChild.nodeName)
+
+console.log(first.innerHTML)// works only for element  nodes 
+console.log(first.innerHTML = '<I>hey  i am italic </I>')
+console.log(first.outerHTML)
+console.log(first.outerHTML = '<div>hey  i am italic </div>')
+console.log(document.body.firstChild)
+console.log(document.body.firstChild.data)
+console.log(document.body.firstChild.nodeValue)
+console.log(document.body.textContent)
+console.log(first.hidden=false )
