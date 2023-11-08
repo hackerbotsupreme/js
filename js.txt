@@ -1,0 +1,13 @@
+learn js with 
+https://learnjavascript.online/app.html
+
+this course is paid 
+but i have the content of that course so 
+i will collect browse and learn using 
+this , 
+in the mdn ,
+there are two things  guides and reference 
+reference
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas
+guide 
+https://developer.mozilla.org/en-US/docs/Learn
